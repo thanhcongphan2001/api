@@ -281,7 +281,10 @@ function addRoutes(app, peliasConfig) {
       middleware.changeLanguage(changeLanguageService, changeLanguageShouldExecute),
       middleware.assignLabels(),
       middleware.geocodeJSON(peliasConfig.api, base),
-      middleware.sendJSON
+      //-- @cong-pt
+      // middleware.sendJSON
+      middleware.sendJSONRevertGeocoding.js
+      //--
     ]),
     reverse: createRouter([
       sanitizers.reverse.middleware(peliasConfig.api),
